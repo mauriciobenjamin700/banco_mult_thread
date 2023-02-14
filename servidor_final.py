@@ -6,12 +6,32 @@ import threading
 bank = Banco()
 ############################# dados abaixo são padrão para criação do socket  ########################################
 class usuario(threading.Thread):
+
+    """
+    Classe que representa um usuário do banco
+
+    ...
+    Atributos
+    ---------
+    con : objeto
+        conexão da maquina que o usuário está usando 
+    adress : objeto
+        endereço da maquina que o usuário
+
+
+    """
+
     def __init__(self,adress,con) -> None:
+
+        """
+        Construtor da classe necessário para criar o atributo 
+        """
+
         threading.Thread.__init__(self)
         self.con = con
         self.adress = adress
 
-        print('Nova conexão:',con)
+        #print('Nova conexão:',con)
 
     def run(self):
         while (True):
