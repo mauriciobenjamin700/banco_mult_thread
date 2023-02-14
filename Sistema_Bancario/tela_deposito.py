@@ -53,7 +53,7 @@ class Tela_Deposito(QMainWindow):
         --------
         Atributos:
         --------
-        LineEdit_deposito: É uma caixa de texto onde o usuario pode adicionar o seu nome.
+        LineEdit_deposito: É uma caixa de texto onde o usuario pode adicionar o valor que irá depositar.
         '''
         self.LineEdit_deposito = QLineEdit(self)
         self.LineEdit_deposito.move(700, 400)
@@ -63,7 +63,15 @@ class Tela_Deposito(QMainWindow):
 
 
 ############################################### QPushButton ##################
-
+        '''
+        --------
+        Atributos:
+        --------
+        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de depositar, onde ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao2: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        '''
         self.botao_deposito = QPushButton('Confirmar Deposito',self)
         self.botao_deposito.move(470, 600)
         self.botao_deposito.resize(400,60)
@@ -78,6 +86,10 @@ class Tela_Deposito(QMainWindow):
 
 
     def Carregar_Janela (self):
+        '''
+        A função "Carrega_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
+        esquerdo, topo, largura, altura e titulo
+        '''
 
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
         
@@ -86,6 +98,9 @@ class Tela_Deposito(QMainWindow):
         self.show()
 
 if __name__ == '__main__':
+    """
+    Em caso de teste utilizasse o " if __name__ == '__main__' "
+    """
     import sys
     aplicacao =  QApplication(sys.argv)
     j = Tela_Deposito()
