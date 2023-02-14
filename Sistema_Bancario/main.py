@@ -37,8 +37,6 @@ class main():
         self.tela_historico.close()
 
 ############################################################ criando o socket do cliente que irá se conectar com o servidor ###########
-        #ip = '10.180.42.64' #colocar o ipv4 da maquina servidor
-        #ip = '10.180.42.86'
         ip = 'localhost'
         port = 9002
 
