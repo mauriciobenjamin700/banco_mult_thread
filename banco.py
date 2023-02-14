@@ -87,6 +87,17 @@ class Banco():
             return (False, 'Conta não encontrada')
     
     def cadastrar_cliente(self,cpf,nome,sobrenome):
+        """
+        Realiza o cadastro do cliente no banco de dados e retorna True caso o mesmo não possua um cadastro, caso o cliente já possuir cadastro retorna False e não cadastra
+
+            Parametros:
+                cpf {string} : cpf do cliente em formato string
+                nome {string} : nome do cliente em formato string
+                sobrenome {string} : sobrenome do cliente em formato string
+            
+            Retorno: 
+                Boleano referente ao resultado da operação
+        """
         busca = self.buscar_cliente(cpf)
         #testar se o cliente já possui conta
         if busca[0]:
@@ -98,9 +109,18 @@ class Banco():
             return True
     
     def criar_conta(self, cliente_cpf, login,senha):
+        """
+        Realiza o cadastro de uma no banco de dados e retorna True caso a mesmo não exista, caso a conta já exista retorna False e não cadastra
+
+            Parametros:
+                cliente_cpf {string} : cpf do cliente em formato string
+                login {string} : login do cliente em formato string
+                senha {string} : hash da senha do cliente em formato string
+            
+            Retorno: 
+                Boleano referente ao resultado da operação
+        """
         
-        #hash_object = hashlib.md5(senha.encode())
-        #senha = hash_object.hexdigest()
 
         busca = self.buscar_cliente(cliente_cpf)
         if busca[0] == True:
@@ -125,16 +145,6 @@ class Banco():
         else:
             return False
 
-    def cancelar_conta(self,cpf,senha):
-
-        #hash_object = hashlib.md5(senha.encode())
-        #senha = hash_object.hexdigest()
-
-        busca = self.buscar_cliente(cpf)
-        if busca[0] == True:
-            comando = 'DELETE FROM conta WHERE cliente_cpf = %s AND senha = %s'
-            self.cursor.execute(comando,(cpf,senha))
-            comando = 'UPDATE TABLE cliente WHERE conta_num '
 
 ########################################################## CADASTRO E BUSCA DE CONTAS/CLIENTES ##############################
 ########################################################### OPERAÇÕES BANCÁRIOS E HISTÓRICO #################################
