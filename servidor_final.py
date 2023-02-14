@@ -43,7 +43,9 @@ class usuario(threading.Thread):
     def run(self):
         while (True):
             """
-            Quando uma instancia da classe é criada, esta função é iniciada. Esta função recebe strings separadas por virgula enviadas pelo cliente na variavel "msg_cliente", as separa e transforma em listas de caracteres, onde a posição [0] da lista é a função que ser solicitada ao banco e as demais posições são os dados necessários para a execução da função do banco
+            Quando uma instancia da classe é criada, esta função é iniciada. Esta função recebe strings separadas por virgula enviadas pelo cliente na variavel "msg_cliente", as separa e transforma em listas de caracteres, onde a posição [0] da lista é a função que ser solicitada ao banco e as demais posições são os dados necessários para a execução da função do banco.
+
+            após cada operação e retornado uma string com os dados que o usuário precisa
             """
 
     
