@@ -125,9 +125,9 @@ class Tela_Cadastro(QMainWindow):
         --------
         Atributos:
         --------
-        botao1: Um botão que é usado para realizar uma determinada ação onde ele pode ser nomeado, movimentado 
+        botao1: Um botão que é usado para realizar uma determinada ação que é a de cadastrar, onde ele pode ser nomeado, movimentado 
         a sua posição e redimensionado de tamanho.
-        botao2: Um botão que é usado para realizar uma determinada ação onde ele pode ser nomeado, movimentado 
+        botao2: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
         a sua posição e redimensionado de tamanho.
         '''
         self.botao1 = QPushButton("CADASTRAR", self)
