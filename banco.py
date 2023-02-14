@@ -229,8 +229,9 @@ class Banco():
 
         parâmetros:
             valor {string} : valor a ser depositado em formato de string
-            num_conta {string} : número da conta em string onde será retirado o valor para saque
-            senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação 
+            num_conta {string} : número da conta em string onde será retirado o valor para transferencia
+            senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação
+            num_conta_destino {string} : número da conta que será creditado o valor transferido pela conta do usuário 
         Retorno: 
                 Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
         """
@@ -279,6 +280,15 @@ class Banco():
 
 
     def historico(self, num_conta):
+        """
+        Realiza o ato de "buscar histórico" do banco, onde recebe um número de conta, busca todas as transações referentes a conta e retorna as mesmas.
+
+        parâmetros:
+            num_conta {string} : número da conta em string onde será retirado o valor para saque
+
+        Retorno: 
+           uma lista de tuplas, onde cada tupla é uma transação
+        """
         comando = f'SELECT transacao, data_transacao FROM historico WHERE historico_num_conta = {num_conta}'
         self.cursor.execute(comando)
         retorno = self.cursor.fetchall()
