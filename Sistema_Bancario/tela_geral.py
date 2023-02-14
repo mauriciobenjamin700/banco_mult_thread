@@ -1,16 +1,22 @@
-'''
-                        precisa conter:
-painel de saldo
-botao para transferencia
-bota para saque
-botao para deposito
-botao para historico
-botao para extrato
-
-'''
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
 
 class Tela_Geral(QMainWindow):
+    """
+    uma classe para representar uma tela de deposito
+    --------
+    Atributos:
+    --------
+    esquerda: int
+     define a posição da "tela cadastro" no lado esquerdo da tela de visualização 
+     topo: int
+     define a posição da "tela cadastro" no topo da tela de vizualisação
+     largura: int
+     define a largura da "tela cadastro" na tela de visualização
+     altura: int
+     define a altura da "tela cadastro" na tela de visualização.
+     titulo: str
+     define o titulo da "tela cadastro" na tela de visualização.
+    """
     def __init__(self):
         super().__init__()
 
