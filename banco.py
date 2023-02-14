@@ -149,6 +149,15 @@ class Banco():
 ########################################################## CADASTRO E BUSCA DE CONTAS/CLIENTES ##############################
 ########################################################### OPERAÇÕES BANCÁRIOS E HISTÓRICO #################################
     def depositar(self, valor, num_conta):
+        """
+        Realiza o ato de "depositar" do banco, onde recebe um valor e um número de conta e esse valor sera creditado na conta.
+
+            parâmetros:
+                valor {string} : valor a ser depositado em formato de string
+                num_conta {string} : número da conta em string onde será créditado o depósito 
+            Retorno: 
+                Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
+        """
         valor = float(valor)
         if valor > 0:
             comando = f'SELECT saldo FROM conta WHERE numero = {num_conta}'
@@ -168,10 +177,19 @@ class Banco():
             return (False, 'Falha ao realizar o deposito, valor invalido!')
 
     def sacar(self, valor, num_conta, senha):
+        """
+        Realiza o ato de "sacar" do banco, onde recebe um valor e um número de conta e esse valor sera retirado da conta.
+
+            parâmetros:
+                valor {string} : valor a ser depositado em formato de string
+                num_conta {string} : número da conta em string onde será retirado o valor para saque
+                senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação 
+            Retorno: 
+                Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
+        """
+
         valor = float(valor)
 
-        #hash_object = hashlib.md5(senha.encode())
-        #senha = hash_object.hexdigest()
 
         if valor > 0:
             comando = f'SELECT saldo, limite, senha FROM conta WHERE numero = {num_conta}'
@@ -206,9 +224,17 @@ class Banco():
 
 
     def transferir(self, valor,num_conta, senha, num_conta_destino):
+        """
+        Realiza o ato de "transferir" do banco, onde recebe um valor e um número de conta, onde essa conta tera seu saldo subtraido pelo valor passado e esse mesmo valor será creditado na conta destino que foi passada.
 
-        #hash_object = hashlib.md5(senha.encode())
-        #senha = hash_object.hexdigest()
+        parâmetros:
+            valor {string} : valor a ser depositado em formato de string
+            num_conta {string} : número da conta em string onde será retirado o valor para saque
+            senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação 
+        Retorno: 
+                Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
+        """
+
 
         valor = float(valor)
         if valor > 0:
