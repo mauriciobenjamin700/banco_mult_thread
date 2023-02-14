@@ -4,7 +4,9 @@ from datetime import datetime
 #import hashlib
 
 def data():
-
+    """
+    retorna a data e hora atual em formato de string
+    """
     data = str(datetime.now())
 
     ano = data[0:4]
@@ -20,11 +22,37 @@ def data():
     return f'{data_formatada} as {hora}'
 
 class Banco():
+
+    """
+    classe banco que possui uma conexão ao banco de dados, onde a mesma pode acessar e alterar os dados do mesmo.
+    """
+
     def __init__(self) -> None:
+        """
+        construtor que cria dois atributos referentes ao banco de dados
+
+        self.conexão : mysql object
+            conexão entre a classe banco com o banco de dados escolhido, onde a mesma precisa dos parametros de acesso e conexão com o respectivo banco
+        
+        self.cursor : mysql object
+            cursor mysql que permite executar comandos no banco de dados, será usado sempre que for necessário solicitar algo ao banco de dados
+
+        """
         self.conexao = mysql.connector.connect(host='localhost',user='root',password='',database='banco_python')
         self.cursor = self.conexao.cursor()
 
     def buscar_cliente(self, cpf):
+        """
+        Realiza uma busca no banco de dados para saber se existe um cliente com cpf passado.
+        caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados do cliente
+        caso não exista o cliente buscado, retorna False e uma string de aviso.
+
+            parametros:
+                cpf {string} : cpf do cliente que se deseja buscar
+
+            retorno:
+            Tuple : tupla com o resultado da busca pelo cliente
+        """
         comando = (f'SELECT * FROM cliente where cpf = {cpf}')
 
         self.cursor.execute(comando)
@@ -35,6 +63,17 @@ class Banco():
             return (False, 'Cliente não encontrado')
 
     def buscar_conta(self, numero):
+        """
+        Realiza uma busca no banco de dados para saber se existe uma conta referente ao número passado passado.
+        caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados da conta
+        caso não exista a conta buscada, retorna False e uma string de aviso.
+
+            parametros:
+                numero {string} : numero da conta que se deseja buscar
+
+            retorno:
+            Tuple : tupla com o resultado da busca pela conta
+        """
         comando = (f'SELECT * FROM conta where numero = {numero}')
 
         self.cursor.execute(comando)
