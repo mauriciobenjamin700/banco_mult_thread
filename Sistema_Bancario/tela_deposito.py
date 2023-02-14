@@ -1,6 +1,22 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton,QLabel,QLineEdit
 
 class Tela_Deposito(QMainWindow):
+    """
+    uma classe para representar uma tela de deposito
+    --------
+    Atributos:
+    --------
+    esquerda: int
+     define a posição da "tela cadastro" no lado esquerdo da tela de visualização 
+     topo: int
+     define a posição da "tela cadastro" no topo da tela de vizualisação
+     largura: int
+     define a largura da "tela cadastro" na tela de visualização
+     altura: int
+     define a altura da "tela cadastro" na tela de visualização.
+     titulo: str
+     define o titulo da "tela cadastro" na tela de visualização.
+    """
     def __init__ (self):
         super().__init__()
         
@@ -10,6 +26,13 @@ class Tela_Deposito(QMainWindow):
         self.altura = 800
         self.titulo = "TELA DE DEPOSITO"
 ####################################### LABEL #######################
+        '''
+        --------
+        Atributos:
+        --------
+        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_deposito: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA O SEU DEPOSITO AQUI")
         self.label1.move(450, 10)
@@ -26,6 +49,12 @@ class Tela_Deposito(QMainWindow):
 
         
 ############################################### LINE EDIT ####################
+        '''
+        --------
+        Atributos:
+        --------
+        LineEdit_deposito: É uma caixa de texto onde o usuario pode adicionar o seu nome.
+        '''
         self.LineEdit_deposito = QLineEdit(self)
         self.LineEdit_deposito.move(700, 400)
         self.LineEdit_deposito.resize(300,40)
