@@ -36,6 +36,7 @@ class main():
         self.tela_historico = Tela_historico()
         self.tela_historico.close()
 
+
 ############################################################ criando o socket do cliente que irá se conectar com o servidor ###########
         ip = 'localhost'
         port = 9002
