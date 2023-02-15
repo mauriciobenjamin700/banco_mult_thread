@@ -2,6 +2,22 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton,QLabel,QLineE
 
 class Tela_Login(QMainWindow):
     def __init__ (self):
+        """
+        uma classe para representar uma tela login
+        --------
+        Atributos:
+        --------
+        esquerda: int
+        define a posição da "tela login" no lado esquerdo da tela de visualização 
+        topo: int
+        define a posição da "tela login" no topo da tela de vizualisação
+        largura: int
+        define a largura da "tela login" na tela de visualização
+        altura: int
+        define a altura da "tela login" na tela de visualização.
+        titulo: str
+        define o titulo da "tela login" na tela de visualização.
+        """
         super().__init__()
         
         self.esquerda = 0
@@ -10,6 +26,14 @@ class Tela_Login(QMainWindow):
         self.altura = 800
         self.titulo = "TELA DE LOGIN"
 ####################################### LABEL #######################
+        '''
+        --------
+        Atributos:
+        --------
+        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_login: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA O LOGIN")
         self.label1.move(540, 0)
@@ -28,8 +52,16 @@ class Tela_Login(QMainWindow):
         self.label_senha.resize(200,60)
         self.label_senha.setStyleSheet("QLabel {font: 40px}")
 
-        
+   
 ############################################### LINE EDIT ####################
+        '''
+        --------
+        Atributos:
+        --------
+        LineEdit_login: É uma caixa de texto onde o usuario pode adicionar o usuário de login que criou para poder logar na conta.
+        LineEdit_senha: É uma caixa de texto onde o usuario pode adicionar a senha de login que criou para poder logar na conta.
+
+        '''
         self.LineEdit_login = QLineEdit(self)
         self.LineEdit_login.move(700, 300)
         self.LineEdit_login.resize(300,40)
@@ -45,7 +77,15 @@ class Tela_Login(QMainWindow):
         self.LineEdit_senha.setEchoMode(QLineEdit.Password)
 
 ############################################### QPushButton ##################
-
+        '''
+        --------
+        Atributos:
+        --------
+        botao_login: Um botão que é usado para realizar uma determinada ação que é a de logar e ir para a tela da conta, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        '''
         self.botao_login = QPushButton('Fazer Login',self)
         self.botao_login.move(470, 600)
         self.botao_login.resize(400,60)
@@ -60,7 +100,10 @@ class Tela_Login(QMainWindow):
 
 
     def Carregar_Janela (self):
-
+        '''
+        A função "Criar_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
+        esquerdo, topo, largura, altura e titulo
+        '''
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
         
         self.setWindowTitle(self.titulo)
@@ -68,6 +111,9 @@ class Tela_Login(QMainWindow):
         self.show()
 
 if __name__ == '__main__':
+    """
+    Em caso de teste utilizasse o " if __name__ == '__main__' "
+    """
     import sys
     aplicacao =  QApplication(sys.argv)
     j = Tela_Login()
