@@ -109,7 +109,7 @@ class Tela_Geral(QMainWindow):
 
     def Criar_Tela(self):
         '''
-        A função "Carrega_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
+        A função "Criar_Tela" cria uma janela na tela de acordo com os dados adicionado nos atributos
         esquerdo, topo, largura, altura e titulo
         '''
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
