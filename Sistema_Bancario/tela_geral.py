@@ -2,20 +2,20 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
 
 class Tela_Geral(QMainWindow):
     """
-    uma classe para representar uma tela de deposito
+    uma classe para representar uma tela geral
     --------
     Atributos:
     --------
     esquerda: int
-     define a posição da "tela cadastro" no lado esquerdo da tela de visualização 
+     define a posição da "tela geral" no lado esquerdo da tela de visualização 
      topo: int
-     define a posição da "tela cadastro" no topo da tela de vizualisação
+     define a posição da "tela geral" no topo da tela de vizualisação
      largura: int
-     define a largura da "tela cadastro" na tela de visualização
+     define a largura da "tela geral" na tela de visualização
      altura: int
-     define a altura da "tela cadastro" na tela de visualização.
+     define a altura da "tela geral" na tela de visualização.
      titulo: str
-     define o titulo da "tela cadastro" na tela de visualização.
+     define o titulo da "tela geral" na tela de visualização.
     """
     def __init__(self):
         super().__init__()
@@ -26,6 +26,15 @@ class Tela_Geral(QMainWindow):
         self.altura = 800
         self.titulo = 'Tela Geral'
 #######################################$ titulo e saldo ###########################
+        '''
+        --------
+        Atributos:
+        --------
+        label_msg: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_saldo: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_limite: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_num_conta: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        '''
         self.label_msg = QLabel(self)
         self.label_msg.setText('BEM VINDO(A)  ')
         self.label_msg.resize(600,100)
@@ -50,6 +59,19 @@ class Tela_Geral(QMainWindow):
         self.label_num_conta.move(350,580)
         self.label_num_conta.setStyleSheet('QLabel {font: 40px; color: blue}')
 ########################################### Fileira de cima
+        '''
+        --------
+        Atributos:
+        --------
+        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de deposito, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao_sacar: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de saque, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao_transferir: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de transferência, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao_historico: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de histórico, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        '''
         self.botao_deposito = QPushButton('Depositar', self)
         self.botao_deposito.resize(200,40)
         self.botao_deposito.move(530,250)
@@ -72,6 +94,13 @@ class Tela_Geral(QMainWindow):
 
         
 ##################################### sair ########################################
+        '''
+        --------
+        Atributos:
+        --------
+        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        '''
         self.botao_voltar = QPushButton("Voltar", self)
         self.botao_voltar.move(1150, 30)
         self.botao_voltar.resize(100,40)
@@ -79,11 +108,18 @@ class Tela_Geral(QMainWindow):
         self.Criar_Tela()
 
     def Criar_Tela(self):
+        '''
+        A função "Carrega_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
+        esquerdo, topo, largura, altura e titulo
+        '''
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
         self.setWindowTitle(self.titulo)
         self.show()
 
 if __name__ == '__main__':
+    """
+    Em caso de teste utilizasse o " if __name__ == '__main__' "
+    """
     import sys
     aplicativo = QApplication(sys.argv)
     tela = Tela_Geral()

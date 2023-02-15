@@ -7,15 +7,15 @@ class Tela_Deposito(QMainWindow):
     Atributos:
     --------
     esquerda: int
-     define a posição da "tela cadastro" no lado esquerdo da tela de visualização 
+     define a posição da "tela deposito" no lado esquerdo da tela de visualização 
      topo: int
-     define a posição da "tela cadastro" no topo da tela de vizualisação
+     define a posição da "tela deposito" no topo da tela de vizualisação
      largura: int
-     define a largura da "tela cadastro" na tela de visualização
+     define a largura da "tela deposito" na tela de visualização
      altura: int
-     define a altura da "tela cadastro" na tela de visualização.
+     define a altura da "tela deposito" na tela de visualização.
      titulo: str
-     define o titulo da "tela cadastro" na tela de visualização.
+     define o titulo da "tela deposito" na tela de visualização.
     """
     def __init__ (self):
         super().__init__()
@@ -67,9 +67,9 @@ class Tela_Deposito(QMainWindow):
         --------
         Atributos:
         --------
-        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de depositar, onde ele pode ser nomeado, movimentado 
+        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de depositar, na criação desse botão ele pode ser nomeado, movimentado 
         a sua posição e redimensionado de tamanho.
-        botao2: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
+        botao2: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
         a sua posição e redimensionado de tamanho.
         '''
         self.botao_deposito = QPushButton('Confirmar Deposito',self)
