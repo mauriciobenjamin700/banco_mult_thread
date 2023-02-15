@@ -2,6 +2,22 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton,QLabel,QLineE
 
 class Tela_Saque(QMainWindow):
     def __init__ (self):
+        """
+        uma classe para representar uma tela saque
+        --------
+        Atributos:
+        --------
+        esquerda: int
+        define a posição da "tela saque" no lado esquerdo da tela de visualização 
+        topo: int
+        define a posição da "tela saque" no topo da tela de vizualisação
+        largura: int
+        define a largura da "tela saque" na tela de visualização
+        altura: int
+        define a altura da "tela saque" na tela de visualização.
+        titulo: str
+        define o titulo da "tela saque" na tela de visualização.
+        """
         super().__init__()
         
         self.esquerda = 0
@@ -10,6 +26,14 @@ class Tela_Saque(QMainWindow):
         self.altura = 800
         self.titulo = "TELA DE SAQUE"
 ####################################### LABEL #######################
+        '''
+        --------
+        Atributos:
+        --------
+        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_saque: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA O SEU SAQUE AQUI")
         self.label1.move(350, 10)
@@ -28,10 +52,15 @@ class Tela_Saque(QMainWindow):
         self.label_senha.resize(150,40)
         self.label_senha.setStyleSheet("QLabel {font: 40px}")
 
-        
-
-        
 ############################################### LINE EDIT ####################
+        '''
+        --------
+        Atributos:
+        --------
+        LineEdit_sacar: É uma caixa de texto onde o usuario pode adicionar o valor que deseja sacar.
+        LineEdit_senha: É uma caixa de texto onde o usuario pode adicionar a senha de login que criou para poder realizar o saque.
+
+        '''
         self.LineEdit_sacar = QLineEdit(self)
         self.LineEdit_sacar.move(600, 300)
         self.LineEdit_sacar.resize(300,40)
@@ -45,7 +74,15 @@ class Tela_Saque(QMainWindow):
         self.LineEdit_senha.setEchoMode(QLineEdit.Password)
 
 ############################################### QPushButton ##################
-
+        '''
+        --------
+        Atributos:
+        --------
+        botao_saque: Um botão que é usado para realizar uma determinada ação que é a de executar o saque, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+        a sua posição e redimensionado de tamanho.
+        '''
         self.botao_saque = QPushButton('Confirmar Saque',self)
         self.botao_saque.move(400, 600)
         self.botao_saque.resize(400,60)
@@ -60,7 +97,10 @@ class Tela_Saque(QMainWindow):
 
 
     def Carregar_Janela (self):
-
+        '''
+        A função "Criar_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
+        esquerdo, topo, largura, altura e titulo
+        '''
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
         
         self.setWindowTitle(self.titulo)
@@ -68,6 +108,9 @@ class Tela_Saque(QMainWindow):
         self.show()
 
 if __name__ == '__main__':
+    """
+    Em caso de teste utilizasse o " if __name__ == '__main__' "
+    """
     import sys
     aplicacao =  QApplication(sys.argv)
     j = Tela_Saque()
