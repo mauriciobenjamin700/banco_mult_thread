@@ -5,19 +5,21 @@ class Tela_Transferencia(QMainWindow):
         super().__init__()
         """
         uma classe para representar uma tela transferencia
-        --------
-        Atributos:
+        
+        ...
+
+        Attributes:
         --------
         esquerda: int
-        define a posição da "tela transferencia" no lado esquerdo da tela de visualização 
+                define a posição da "tela geral" no lado esquerdo da tela de visualização 
         topo: int
-        define a posição da "tela transferencia" no topo da tela de vizualisação
+                define a posição da "tela geral" no topo da tela de vizualisação
         largura: int
-        define a largura da "tela transferencia" na tela de visualização
+                define a largura da "tela geral" na tela de visualização
         altura: int
-        define a altura da "tela transferencia" na tela de visualização.
+                define a altura da "tela geral" na tela de visualização.
         titulo: str
-        define o titulo da "tela transferencia" na tela de visualização.
+                define o titulo da "tela geral" na tela de visualização.
         """
         self.esquerda = 0
         self.topo = 0
@@ -26,13 +28,17 @@ class Tela_Transferencia(QMainWindow):
         self.titulo = "TELA DE TRANSFERENCIA"
 ####################################### LABEL #######################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_valor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_login_recebedor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label1: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_valor: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_senha: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_login_recebedor: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA SUA TRANSFERENCIA AQUI")
@@ -60,12 +66,15 @@ class Tela_Transferencia(QMainWindow):
 
 ############################################### LINE EDIT ####################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        LineEdit_sacar: É uma caixa de texto onde o usuario pode adicionar o valor que deseja sacar.
-        LineEdit_senha: É uma caixa de texto onde o usuario pode adicionar a senha de login que criou para poder realizar o saque.
-        LineEdit_login_recebedor: É uma caixa de texto onde o usuario pode adicionar o login de destino que receberá a transferência.
+        LineEdit_sacar: object
+                É uma caixa de texto onde o usuario pode adicionar o valor que deseja sacar.
+        LineEdit_senha: object
+                É uma caixa de texto onde o usuario pode adicionar a senha de login que criou para poder realizar o saque.
+        LineEdit_login_recebedor: object
+                É uma caixa de texto onde o usuario pode adicionar o login de destino que receberá a transferência.
 
         '''
         self.LineEdit_sacar = QLineEdit(self)
@@ -86,13 +95,15 @@ class Tela_Transferencia(QMainWindow):
 
 ############################################### QPushButton ##################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_confirmar_transferencia: Um botão que é usado para realizar uma determinada ação que é a de executar a transferência, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+        botao_confirmar_transferencia: object
+                Um botão que é usado para realizar uma determinada ação que é a de executar a transferência, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        botao_voltar: object
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         '''
         self.botao_confirmar_transferencia = QPushButton('Confirmar Transferencia',self)
         self.botao_confirmar_transferencia.move(500, 620)
