@@ -1,26 +1,82 @@
-#importação da tela inicial e suas telas ligadas
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
 from tela_login import Tela_Login
-#se login for aprovado acessa tela geral
 from tela_geral import Tela_Geral
-#dentro da tela geral, há botões que ligam a com outras 5 telas
 from tela_deposito import Tela_Deposito
 from tela_saque import Tela_Saque
 from tela_transferencia import Tela_Transferencia
 from tela_historico import Tela_historico
-#importação do PyQt5 para criação da tela principal que ira ligar todas
 from PyQt5.QtWidgets import QApplication, QMessageBox
 import hashlib
-
 import socket
 
 
 class main():
+    """
+    Classe que gerencia todas as telas necessárias para a aplicação
+
+    ...
+
+    Attributes
+    ---------
+    tela_inicial : class
+        tela inicial
+    tela_cadastro : class
+        tela cadastro
+    tela_login : class
+        tela login
+    tela_geral : class
+        tela geral
+    tela_deposito : class
+        tela de deposito
+    tela_saque : class
+        tela de saque
+    tela_transferencia : class
+        tela de transferencia
+    tela_historico : class
+        tela de histórico
+    cliente_socket : object
+        socket do cliente
+    login_atual : str
+        número da conta do cliente
+
+    Methods
+    -------
+    tela_0():
+        abre a tela e fecha as demais
+    tela_1():
+        abre a tela e fecha as demais
+    tela_2():
+        abre a tela e fecha as demais
+    tela_3():
+        abre a tela e fecha as demais
+    tela_4():
+        abre a tela e fecha as demais
+    tela_5():
+        abre a tela e fecha as demais
+    tela_6():
+        abre a tela e fecha as demais
+    tela_7():
+        abre a tela e fecha as demais
+    sair():
+        fecha a conexão do cliente
+    fuc_cadastro():
+        manda os dados do cadastro para o servidor 
+    func_login():
+        manda os dados de login para o servidor
+    func_depositar():
+        manda os dados de deposito para o servidor
+    func_sacar():
+        manda os dados de saque para o servidor
+    func_transferencia():
+        manda os dados de transferencia para o servidor
+    
+
+    """
     def __init__(self):
-        #criação de todas as janelas usadas
+   
         self.tela_inicial = Tela_Inicial()   
-        #fechamento de todas as janelas desnecessarias no inicio, caso precise, serão abertas
+
         self.tela_cadastro = Tela_Cadastro()
         self.tela_cadastro.close()
         self.tela_login = Tela_Login()
@@ -37,16 +93,14 @@ class main():
         self.tela_historico.close()
 
 
-############################################################ criando o socket do cliente que irá se conectar com o servidor ###########
+
         ip = 'localhost'
         port = 9002
 
-        addr = ((ip, port))#define a tupla de endereço
+        addr = ((ip, port))
         self.cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # conectando o cliente_socket com o servidor
         self.cliente_socket.connect(addr)
-###############################################################################################
-        #salvando o login em uso
+
         self.login_atual = ''
 
         #tela inicial
@@ -85,7 +139,7 @@ class main():
         self.tela_saque.close()
         self.tela_transferencia.close()
         self.tela_historico.close()
-        ############## Limpando as Line Edits em caso de desistencia do usuário #####
+  
         self.tela_deposito.LineEdit_deposito.setText('')
         
         self.tela_saque.LineEdit_sacar.setText('')
@@ -94,7 +148,7 @@ class main():
         self.tela_transferencia.LineEdit_sacar.setText('')
         self.tela_transferencia.LineEdit_senha.setText('')
         self.tela_transferencia.LineEdit_login_recebedor.setText('')
-        #################
+
 
         self.cliente_socket.send(f'3,{self.login_atual}'.encode())
         retorno = self.cliente_socket.recv(1024).decode()
@@ -108,7 +162,7 @@ class main():
         self.tela_geral.label_limite.setText(f'Limite Atual: {(conta[4])} R$')
         self.tela_geral.label_num_conta.setText(f'CONTA DE NÚMERO {conta[1]}')
 
-        #vai precisar de uma nova tela, onde a mesma solicita login
+    
         self.tela_geral.botao_deposito.clicked.connect(self.tela_4)
         self.tela_geral.botao_sacar.clicked.connect(self.tela_5)
         self.tela_geral.botao_transferir.clicked.connect(self.tela_6)
@@ -149,7 +203,7 @@ class main():
         self.cliente_socket.send(f'7,{self.login_atual}'.encode())
         retorno = self.cliente_socket.recv(1024).decode()
         lista_string = retorno.split(',')
-        #print(lista_string)
+   
         
         self.tela_historico.Historico.clear()
         for string in lista_string:
@@ -166,7 +220,7 @@ class main():
     
 
 
-    ########################################### funções para os botões##########################################################
+ 
     def func_cadastro(self):
    
         nome = str(self.tela_cadastro.LineEdit_nome.text().upper())
@@ -195,9 +249,6 @@ class main():
                 self.tela_cadastro.LineEdit_senha.setText('')
 
                 
-
-
-
             else:
                 QMessageBox.warning(None, 'Tela_Cadastro', 'Falha ao realizar o cadastro')
     
@@ -251,12 +302,9 @@ class main():
                     QMessageBox.information(None, 'Tela_Deposito',retorno[1])
             else:
                 QMessageBox.warning(None, 'Tela_Deposito','Digite um valor númerico')  
-        #else:
-        #    QMessageBox.warning(None, 'Tela_Deposito','Preencha todos os campos!')
+
              
        
-
-
     def func_saque(self):
 
         valor = self.tela_saque.LineEdit_sacar.text()
@@ -282,8 +330,7 @@ class main():
                         QMessageBox.information(None, 'Tela_Saque',retorno[1])
                         self.tela_saque.LineEdit_sacar.setText('')
                         self.tela_saque.LineEdit_senha.setText('')
-        
-                        #teste
+
                     else:
                         QMessageBox.information(None, 'Tela_Saque',retorno[1])
                 except:
@@ -324,7 +371,7 @@ class main():
 
         
 
-#################################################### FIM #################################################################
+
 if __name__ == '__main__':
     import sys
     aplicativo = QApplication(sys.argv)
