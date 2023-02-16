@@ -108,31 +108,66 @@ class main():
         self.tela_inicial.botao_login.clicked.connect(self.tela_2)
         self.tela_inicial.botao_sair.clicked.connect(self.botao_sair)
 
-    #tela inicial
+
     def tela_0(self):
+        """
+        Realiza o ato de abrir a tela inicial e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_cadastro.close()
         self.tela_login.close()
         self.tela_geral.close()
         self.tela_inicial.show()
 
-    #tela cadastro
+
     def tela_1(self):
+        """
+        Realiza o ato de abrir a tela de cadastro e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_cadastro.show()
         self.tela_inicial.hide()
         
         self.tela_cadastro.botao1.clicked.connect(self.func_cadastro)
         self.tela_cadastro.botao2.clicked.connect(self.tela_0)
-    #tela de login
+    
     def tela_2(self):
+        """
+        Realiza o ato de abrir a tela de login e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_login.show()
         self.tela_inicial.close()
 
         self.tela_login.botao_login.clicked.connect(self.func_login)
         self.tela_login.botao_voltar.clicked.connect(self.tela_0)
     
-    #tela geral
     
     def tela_3(self):
+        """
+        Realiza o ato de abrir a tela geral e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_geral.show()
         self.tela_login.close()
         self.tela_deposito.close()
@@ -171,32 +206,64 @@ class main():
 
         self.tela_geral.botao_voltar.clicked.connect(self.tela_0)
     
-    #tela deposito
     def tela_4(self):
+        """
+        Realiza o ato de abrir a tela deposito e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_deposito.show()
         self.tela_geral.hide()
 
         self.tela_deposito.botao_voltar.clicked.connect(self.tela_3)
         self.tela_deposito.botao_deposito.clicked.connect(self.func_depositar)
     
-    #tela saque
     def tela_5(self):
+        """
+        Realiza o ato de abrir a tela de saque e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_saque.show()
         self.tela_geral.hide()
 
         self.tela_saque.botao_saque.clicked.connect(self.func_saque)
         self.tela_saque.botao_voltar.clicked.connect(self.tela_3)
 
-    #tela transferencia
     def tela_6(self):
+        """
+        Realiza o ato de abrir a tela de transferenia e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_transferencia.show()
         self.tela_geral.hide()
 
         self.tela_transferencia.botao_confirmar_transferencia.clicked.connect(self.func_transferencia)
         self.tela_transferencia.botao_voltar.clicked.connect(self.tela_3)
     
-    #tela historico
     def tela_7(self):
+        """
+        Realiza o ato de abrir a tela de histórico e fechar as demais telas que não estão sendo usadas.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.tela_historico.show()
         self.tela_geral.hide()
 
@@ -215,6 +282,15 @@ class main():
 
     
     def botao_sair(self):
+        """
+        Realiza o ato de enviar o aviso de encerramento de conexão para o servidor e fechar as telas da aplicação.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         self.cliente_socket.send('0'.encode())
         self.tela_inicial.close()
     
@@ -222,6 +298,15 @@ class main():
 
  
     def func_cadastro(self):
+        """
+        Realiza o ato de coletar as informações necessárias para realizar o cadastro e enviar as mesmas para o servidor, receber o retorno de servidor e exibir na tela o resultado.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
    
         nome = str(self.tela_cadastro.LineEdit_nome.text().upper())
         sobrenome = str(self.tela_cadastro.LineEdit_sobrenome.text().upper())
@@ -254,6 +339,16 @@ class main():
     
 
     def func_login(self):
+        """
+        Realiza o ato de coletar as informações necessárias para realizar o login e enviar as mesmas para o servidor, receber o retorno de servidor e exibir na tela o resultado.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
+        
         
         login = self.tela_login.LineEdit_login.text()
         senha = self.tela_login.LineEdit_senha.text()
@@ -281,6 +376,15 @@ class main():
         
 
     def func_depositar(self):
+        """
+        Realiza o ato de coletar as informações necessárias para realizar o deposito  e enviar as mesmas para o servidor, receber o retorno de servidor e exibir na tela o resultado.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
     
         valor = self.tela_deposito.LineEdit_deposito.text()
         if not (valor == ''):
@@ -306,6 +410,15 @@ class main():
              
        
     def func_saque(self):
+        """
+        Realiza o ato de coletar as informações necessárias para realizar o saque e enviar as mesmas para o servidor, receber o retorno de servidor e exibir na tela o resultado.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
 
         valor = self.tela_saque.LineEdit_sacar.text()
         senha = self.tela_saque.LineEdit_senha.text()
@@ -336,6 +449,15 @@ class main():
                 except:
                     pass
     def func_transferencia(self):
+        """
+        Realiza o ato de coletar as informações necessárias para reazar a transferencia e enviar as mesmas para o servidor, receber o retorno de servidor e exibir na tela o resultado.
+
+        parameters:
+            None
+
+        return: 
+           None
+        """
         valor = self.tela_transferencia.LineEdit_sacar.text()
         senha = self.tela_transferencia.LineEdit_senha.text()
         login_recebedor = self.tela_transferencia.LineEdit_login_recebedor.text()
