@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
@@ -45,11 +45,16 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_saque.Tela_Saque.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_saque.Tela_Saque.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="atributos">
-<h2>Atributos:<a class="headerlink" href="#atributos" title="Permalink to this heading">¶</a></h2>
-<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_saque: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="attributes">
+<h2>Attributes:<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_saque: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_senha: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -59,6 +64,39 @@ label_senha: rotula algum lugar da tela onde você define um texto, movimenta a 
 <dt class="sig sig-object py" id="banco.Banco">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banco.</span></span><span class="sig-name descname"><span class="pre">Banco</span></span><a class="headerlink" href="#banco.Banco" title="Permalink to this definition">¶</a></dt>
 <dd><p>classe banco que possui uma conexão ao banco de dados, onde a mesma pode acessar e alterar os dados do mesmo.</p>
+<p>…</p>
+<section id="id1">
+<h2>Attributes<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>self.conexao<span class="classifier">object</span></dt><dd><p>conexão entre a classe banco com o banco de dados escolhido, onde a mesma precisa dos parametros de acesso e conexão com o respectivo banco</p>
+</dd>
+<dt>self.cursor<span class="classifier">object</span></dt><dd><p>cursor mysql que permite executar comandos no banco de dados, será usado sempre que for necessário solicitar algo ao banco de dados</p>
+</dd>
+</dl>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>buscar_cliente(cpf):</dt><dd><p>tenta busca os dados do cliente</p>
+</dd>
+<dt>cadastrar_cliente(cpf,nome,sobrenome):</dt><dd><p>tenta cadastrar um cliente</p>
+</dd>
+<dt>criar_conta(cliente_cpf, login,senha):</dt><dd><p>tenta criar uma conta para um cliente</p>
+</dd>
+<dt>depositar(valor, num_conta):</dt><dd><p>tenta realizar um deposito</p>
+</dd>
+<dt>sacar(valor, num_conta, senha):</dt><dd><p>tenta realizar um saque</p>
+</dd>
+</dl>
+<p>transferir(valor,num_conta, senha, num_conta_destino):</p>
+<dl class="simple">
+<dt>historico(num_conta):</dt><dd><p>busca o histórico da conta</p>
+</dd>
+<dt>logar(login, senha):</dt><dd><p>busca o numero da conta</p>
+</dd>
+<dt>sair():</dt><dd><p>fecha a conexão do banco</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="banco.Banco.buscar_cliente">
 <span class="sig-name descname"><span class="pre">buscar_cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.buscar_cliente" title="Permalink to this definition">¶</a></dt>
@@ -67,11 +105,11 @@ caso exista retorna uma tupla onde o primeiro elemento é um boleano referente a
 caso não exista o cliente buscado, retorna False e uma string de aviso.</p>
 <blockquote>
 <div><dl class="simple">
-<dt>parametros:</dt><dd><p>cpf {string} : cpf do cliente que se deseja buscar</p>
+<dt>parameters:</dt><dd><p>cpf {string} : cpf do cliente que se deseja buscar</p>
+</dd>
+<dt>return:</dt><dd><p>Tuple : tupla com o resultado da busca pelo cliente</p>
 </dd>
 </dl>
-<p>retorno:
-Tuple : tupla com o resultado da busca pelo cliente</p>
 </div></blockquote>
 </dd></dl>
 
@@ -83,10 +121,10 @@ caso exista retorna uma tupla onde o primeiro elemento é um boleano referente a
 caso não exista a conta buscada, retorna False e uma string de aviso.</p>
 <blockquote>
 <div><dl class="simple">
-<dt>parametros:</dt><dd><p>numero {string} : numero da conta que se deseja buscar</p>
+<dt>parameters:</dt><dd><p>numero {string} : numero da conta que se deseja buscar</p>
 </dd>
 </dl>
-<p>retorno:
+<p>return:
 Tuple : tupla com o resultado da busca pela conta</p>
 </div></blockquote>
 </dd></dl>
@@ -94,48 +132,63 @@ Tuple : tupla com o resultado da busca pela conta</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="banco.Banco.cadastrar_cliente">
 <span class="sig-name descname"><span class="pre">cadastrar_cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sobrenome</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.cadastrar_cliente" title="Permalink to this definition">¶</a></dt>
-<dd><p>Realiza o cadastro do cliente no banco de dados e retorna True caso o mesmo não possua um cadastro, caso o cliente já possuir cadastro retorna False e não cadastra</p>
+<dd><blockquote>
+<div><p>Realiza o cadastro do cliente no banco de dados e retorna True caso o mesmo não possua um cadastro, caso o cliente já possuir cadastro retorna False e não cadastra</p>
 <blockquote>
 <div><dl class="simple">
-<dt>Parametros:</dt><dd><p>cpf {string} : cpf do cliente em formato string
+<dt>parameters:</dt><dd><p>cpf {string} : cpf do cliente em formato string
 nome {string} : nome do cliente em formato string
 sobrenome {string} : sobrenome do cliente em formato string</p>
 </dd>
-<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação</p>
+</dl>
+<p>return</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>: </dt><dd><p>Boleano referente ao resultado da operação</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="banco.Banco.criar_conta">
 <span class="sig-name descname"><span class="pre">criar_conta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cliente_cpf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.criar_conta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Realiza o cadastro de uma no banco de dados e retorna True caso a mesmo não exista, caso a conta já exista retorna False e não cadastra</p>
+<dd><blockquote>
+<div><p>Realiza o cadastro de uma no banco de dados e retorna True caso a mesmo não exista, caso a conta já exista retorna False e não cadastra</p>
 <blockquote>
 <div><dl class="simple">
-<dt>Parametros:</dt><dd><p>cliente_cpf {string} : cpf do cliente em formato string
+<dt>parameters:</dt><dd><p>cliente_cpf {string} : cpf do cliente em formato string
 login {string} : login do cliente em formato string
 senha {string} : hash da senha do cliente em formato string</p>
 </dd>
-<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação</p>
+</dl>
+<p>return</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>: </dt><dd><p>Boleano referente ao resultado da operação</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="banco.Banco.depositar">
 <span class="sig-name descname"><span class="pre">depositar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.depositar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Realiza o ato de “depositar” do banco, onde recebe um valor e um número de conta e esse valor sera creditado na conta.</p>
+<dd><blockquote>
+<div><p>Realiza o ato de “depositar” do banco, onde recebe um valor e um número de conta e esse valor sera creditado na conta.</p>
 <blockquote>
 <div><dl class="simple">
-<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+<dt>parameters:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
 num_conta {string} : número da conta em string onde será créditado o depósito</p>
 </dd>
-<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+</dl>
+<p>return</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -143,9 +196,9 @@ num_conta {string} : número da conta em string onde será créditado o depósit
 <span class="sig-name descname"><span class="pre">historico</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.historico" title="Permalink to this definition">¶</a></dt>
 <dd><p>Realiza o ato de “buscar histórico” do banco, onde recebe um número de conta, busca todas as transações referentes a conta e retorna as mesmas.</p>
 <dl class="simple">
-<dt>parâmetros:</dt><dd><p>num_conta {string} : número da conta em string onde será retirado o valor para saque</p>
+<dt>parameters:</dt><dd><p>num_conta {string} : número da conta em string onde será retirado o valor para saque</p>
 </dd>
-<dt>Retorno: </dt><dd><p>uma lista de tuplas, onde cada tupla é uma transação</p>
+<dt>return: </dt><dd><p>uma lista de tuplas, onde cada tupla é uma transação</p>
 </dd>
 </dl>
 </dd></dl>
@@ -153,17 +206,22 @@ num_conta {string} : número da conta em string onde será créditado o depósit
 <dl class="py method">
 <dt class="sig sig-object py" id="banco.Banco.sacar">
 <span class="sig-name descname"><span class="pre">sacar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.sacar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Realiza o ato de “sacar” do banco, onde recebe um valor e um número de conta e esse valor sera retirado da conta.</p>
+<dd><blockquote>
+<div><p>Realiza o ato de “sacar” do banco, onde recebe um valor e um número de conta e esse valor sera retirado da conta.</p>
 <blockquote>
 <div><dl class="simple">
-<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+<dt>parameters:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
 num_conta {string} : número da conta em string onde será retirado o valor para saque
 senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação</p>
 </dd>
-<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+</dl>
+<p>return</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -171,16 +229,17 @@ senha {string} : hash da senha em formato de string para garatir uma segurança 
 <span class="sig-name descname"><span class="pre">transferir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta_destino</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.transferir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Realiza o ato de “transferir” do banco, onde recebe um valor e um número de conta, onde essa conta tera seu saldo subtraido pelo valor passado e esse mesmo valor será creditado na conta destino que foi passada.</p>
 <dl class="simple">
-<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+<dt>parameters:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
 num_conta {string} : número da conta em string onde será retirado o valor para transferencia
 senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação
 num_conta_destino {string} : número da conta que será creditado o valor transferido pela conta do usuário</p>
 </dd>
-<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+<dt>return: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
 </dd>
 </dl>
 </dd></dl>
 
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -192,21 +251,37 @@ num_conta_destino {string} : número da conta que será creditado o valor transf
 <span class="target" id="module-tela_cadastro"></span><dl class="py class">
 <dt class="sig sig-object py" id="tela_cadastro.Tela_Cadastro">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_cadastro.</span></span><span class="sig-name descname"><span class="pre">Tela_Cadastro</span></span><a class="headerlink" href="#tela_cadastro.Tela_Cadastro" title="Permalink to this definition">¶</a></dt>
-<dd><section id="uma-classe-para-representar-uma-tela-de-cadastro">
-<h2>uma classe para representar uma tela de cadastro<a class="headerlink" href="#uma-classe-para-representar-uma-tela-de-cadastro" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="id1">
-<h2>Atributos:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dd><p>uma classe para representar uma tela de cadastro</p>
+<p>…</p>
+<section id="id2">
+<h2>Attributes:<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
-<dt>esquerda: int</dt><dd><p>define a posição da “tela cadastro” no lado esquerdo da tela de visualização 
-topo: int
-define a posição da “tela cadastro” no topo da tela de vizualisação
-largura: int
-define a largura da “tela cadastro” na tela de visualização.
-altura: int
-define a altura da “tela cadastro” na tela de visualização.
-titulo: str
-define o titulo da “tela cadastro” na tela de visualização.</p>
+<dt>esquerda: int</dt><dd><p>define a posição da “tela deposito” no lado esquerdo da tela de visualização</p>
+</dd>
+<dt>topo: int</dt><dd><p>define a posição da “tela deposito” no topo da tela de vizualisação</p>
+</dd>
+<dt>largura: int</dt><dd><p>define a largura da “tela deposito” na tela de visualização</p>
+</dd>
+<dt>altura: int</dt><dd><p>define a altura da “tela deposito” na tela de visualização.</p>
+</dd>
+<dt>titulo: str</dt><dd><p>define o titulo da “tela deposito” na tela de visualização.</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>Attributes:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_nome: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_sobrenome: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_cpf: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_login: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_senha: object</dt><dd><p>rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -216,41 +291,26 @@ define o titulo da “tela cadastro” na tela de visualização.</p>
 esquerdo, topo, largura, altura e titulo</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tela_cadastro.Tela_Cadastro.titulo">
-<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_cadastro.Tela_Cadastro.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id2">
-<h3>Atributos:<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
-<p>label1: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_nome: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_sobrenome: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_cpf: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_login: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_senha: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
-</section>
-</dd></dl>
-
 </section>
 </dd></dl>
 
 <span class="target" id="module-tela_deposito"></span><dl class="py class">
 <dt class="sig sig-object py" id="tela_deposito.Tela_Deposito">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_deposito.</span></span><span class="sig-name descname"><span class="pre">Tela_Deposito</span></span><a class="headerlink" href="#tela_deposito.Tela_Deposito" title="Permalink to this definition">¶</a></dt>
-<dd><section id="uma-classe-para-representar-uma-tela-de-deposito">
-<h2>uma classe para representar uma tela de deposito<a class="headerlink" href="#uma-classe-para-representar-uma-tela-de-deposito" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="id3">
-<h2>Atributos:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<dd><p>uma classe para representar uma tela de deposito</p>
+<p>…</p>
+<section id="id4">
+<h2>Attributes:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
-<dt>esquerda: int</dt><dd><p>define a posição da “tela deposito” no lado esquerdo da tela de visualização 
-topo: int
-define a posição da “tela deposito” no topo da tela de vizualisação
-largura: int
-define a largura da “tela deposito” na tela de visualização
-altura: int
-define a altura da “tela deposito” na tela de visualização.
-titulo: str
-define o titulo da “tela deposito” na tela de visualização.</p>
+<dt>esquerda: int</dt><dd><p>define a posição da “tela deposito” no lado esquerdo da tela de visualização</p>
+</dd>
+<dt>topo: int</dt><dd><p>define a posição da “tela deposito” no topo da tela de vizualisação</p>
+</dd>
+<dt>largura: int</dt><dd><p>define a largura da “tela deposito” na tela de visualização</p>
+</dd>
+<dt>altura: int</dt><dd><p>define a altura da “tela deposito” na tela de visualização.</p>
+</dd>
+<dt>titulo: str</dt><dd><p>define o titulo da “tela deposito” na tela de visualização.</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -263,10 +323,14 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_deposito.Tela_Deposito.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_deposito.Tela_Deposito.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id4">
-<h3>Atributos:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
-<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_deposito: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id5">
+<h3>Attributes:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_deposito: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -276,21 +340,20 @@ label_deposito: rotula algum lugar da tela onde você define um texto, movimenta
 <span class="target" id="module-tela_geral"></span><dl class="py class">
 <dt class="sig sig-object py" id="tela_geral.Tela_Geral">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_geral.</span></span><span class="sig-name descname"><span class="pre">Tela_Geral</span></span><a class="headerlink" href="#tela_geral.Tela_Geral" title="Permalink to this definition">¶</a></dt>
-<dd><section id="uma-classe-para-representar-uma-tela-geral">
-<h2>uma classe para representar uma tela geral<a class="headerlink" href="#uma-classe-para-representar-uma-tela-geral" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="id5">
-<h2>Atributos:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<dd><p>uma classe para representar uma tela geral</p>
+<p>…</p>
+<section id="id6">
+<h2>Attributes:<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
-<dt>esquerda: int</dt><dd><p>define a posição da “tela geral” no lado esquerdo da tela de visualização 
-topo: int
-define a posição da “tela geral” no topo da tela de vizualisação
-largura: int
-define a largura da “tela geral” na tela de visualização
-altura: int
-define a altura da “tela geral” na tela de visualização.
-titulo: str
-define o titulo da “tela geral” na tela de visualização.</p>
+<dt>esquerda: int</dt><dd><p>define a posição da “tela geral” no lado esquerdo da tela de visualização</p>
+</dd>
+<dt>topo: int</dt><dd><p>define a posição da “tela geral” no topo da tela de vizualisação</p>
+</dd>
+<dt>largura: int</dt><dd><p>define a largura da “tela geral” na tela de visualização</p>
+</dd>
+<dt>altura: int</dt><dd><p>define a altura da “tela geral” na tela de visualização.</p>
+</dd>
+<dt>titulo: str</dt><dd><p>define o titulo da “tela geral” na tela de visualização.</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -303,12 +366,18 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_geral.Tela_Geral.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_geral.Tela_Geral.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id6">
-<h3>Atributos:<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
-<p>label_msg: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_saldo: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_limite: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_num_conta: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id7">
+<h3>Attributes:<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>label_msg: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_saldo: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_limite: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_num_conta: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -328,9 +397,12 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_historico.Tela_historico.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_historico.Tela_historico.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id7">
-<h2>Atributos:<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
-<p>label: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id8">
+<h2>Attributes:<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -349,12 +421,18 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_transferencia.Tela_Transferencia.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_transferencia.Tela_Transferencia.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id8">
-<h2>Atributos:<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
-<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_valor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_login_recebedor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id9">
+<h2>Attributes:<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_valor: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_senha: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_login_recebedor: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -373,11 +451,16 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_login.Tela_Login.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_login.Tela_Login.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id9">
-<h2>Atributos:<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
-<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_login: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id10">
+<h2>Attributes:<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_login: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+<dt>label_senha: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
@@ -396,9 +479,12 @@ esquerdo, topo, largura, altura e titulo</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tela_inicial.Tela_Inicial.titulo">
 <span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_inicial.Tela_Inicial.titulo" title="Permalink to this definition">¶</a></dt>
-<dd><section id="id10">
-<h2>Atributos:<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
-<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+<dd><section id="id11">
+<h2>Attributes:<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>label1: object</dt><dd><p>rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
