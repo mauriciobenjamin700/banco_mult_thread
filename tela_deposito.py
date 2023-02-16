@@ -3,19 +3,21 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton,QLabel,QLineE
 class Tela_Deposito(QMainWindow):
     """
     uma classe para representar uma tela de deposito
-    --------
-    Atributos:
+    
+    ...
+
+    Attributes:
     --------
     esquerda: int
-     define a posição da "tela deposito" no lado esquerdo da tela de visualização 
-     topo: int
-     define a posição da "tela deposito" no topo da tela de vizualisação
-     largura: int
-     define a largura da "tela deposito" na tela de visualização
-     altura: int
-     define a altura da "tela deposito" na tela de visualização.
-     titulo: str
-     define o titulo da "tela deposito" na tela de visualização.
+        define a posição da "tela deposito" no lado esquerdo da tela de visualização 
+    topo: int
+        define a posição da "tela deposito" no topo da tela de vizualisação
+    largura: int
+        define a largura da "tela deposito" na tela de visualização
+    altura: int
+        define a altura da "tela deposito" na tela de visualização.
+    titulo: str
+        define o titulo da "tela deposito" na tela de visualização.
     """
     def __init__ (self):
         super().__init__()
@@ -27,11 +29,13 @@ class Tela_Deposito(QMainWindow):
         self.titulo = "TELA DE DEPOSITO"
 ####################################### LABEL #######################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_deposito: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label1: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_deposito: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA O SEU DEPOSITO AQUI")
@@ -50,10 +54,11 @@ class Tela_Deposito(QMainWindow):
         
 ############################################### LINE EDIT ####################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        LineEdit_deposito: É uma caixa de texto onde o usuario pode adicionar o valor que irá depositar.
+        LineEdit_deposito: object
+                É uma caixa de texto onde o usuario pode adicionar o valor que irá depositar.
         '''
         self.LineEdit_deposito = QLineEdit(self)
         self.LineEdit_deposito.move(700, 400)
@@ -63,15 +68,17 @@ class Tela_Deposito(QMainWindow):
 
 
 ############################################### QPushButton ##################
-        '''
+        """
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de depositar, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao2: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        '''
+        botao_deposito: object
+                Um botão que é usado para realizar uma determinada ação que é a de depositar, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        botao2: object
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        """
         self.botao_deposito = QPushButton('Confirmar Deposito',self)
         self.botao_deposito.move(470, 600)
         self.botao_deposito.resize(400,60)
@@ -86,10 +93,10 @@ class Tela_Deposito(QMainWindow):
 
 
     def Carregar_Janela (self):
-        '''
+        """
         A função "Carrega_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
         esquerdo, topo, largura, altura e titulo
-        '''
+        """
 
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
         
