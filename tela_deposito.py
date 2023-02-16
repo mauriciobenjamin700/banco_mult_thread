@@ -9,15 +9,15 @@ class Tela_Deposito(QMainWindow):
     Attributes:
     --------
     esquerda: int
-    define a posição da "tela deposito" no lado esquerdo da tela de visualização 
+        define a posição da "tela deposito" no lado esquerdo da tela de visualização 
     topo: int
-    define a posição da "tela deposito" no topo da tela de vizualisação
+        define a posição da "tela deposito" no topo da tela de vizualisação
     largura: int
-    define a largura da "tela deposito" na tela de visualização
+        define a largura da "tela deposito" na tela de visualização
     altura: int
-    define a altura da "tela deposito" na tela de visualização.
+        define a altura da "tela deposito" na tela de visualização.
     titulo: str
-    define o titulo da "tela deposito" na tela de visualização.
+        define o titulo da "tela deposito" na tela de visualização.
     """
     def __init__ (self):
         super().__init__()
@@ -33,9 +33,9 @@ class Tela_Deposito(QMainWindow):
         Attributes:
         --------
         label1: object
-        rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_deposito: object
-        rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label1 = QLabel(self)
         self.label1.setText("FAÇA O SEU DEPOSITO AQUI")
@@ -58,7 +58,7 @@ class Tela_Deposito(QMainWindow):
         Attributes:
         --------
         LineEdit_deposito: object
-        É uma caixa de texto onde o usuario pode adicionar o valor que irá depositar.
+                É uma caixa de texto onde o usuario pode adicionar o valor que irá depositar.
         '''
         self.LineEdit_deposito = QLineEdit(self)
         self.LineEdit_deposito.move(700, 400)
@@ -73,11 +73,11 @@ class Tela_Deposito(QMainWindow):
         Attributes:
         --------
         botao_deposito: object
-        Um botão que é usado para realizar uma determinada ação que é a de depositar, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+                Um botão que é usado para realizar uma determinada ação que é a de depositar, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         botao2: object
-        Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         """
         self.botao_deposito = QPushButton('Confirmar Deposito',self)
         self.botao_deposito.move(470, 600)
