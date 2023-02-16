@@ -25,16 +25,50 @@ class Banco():
 
     """
     classe banco que possui uma conexão ao banco de dados, onde a mesma pode acessar e alterar os dados do mesmo.
+
+    ...
+    
+    Attributes
+    ----------
+    self.conexao : object
+        conexão entre a classe banco com o banco de dados escolhido, onde a mesma precisa dos parametros de acesso e conexão com o respectivo banco
+    self.cursor : object
+        cursor mysql que permite executar comandos no banco de dados, será usado sempre que for necessário solicitar algo ao banco de dados
+
+    Methods
+    -------
+    buscar_cliente(cpf):
+        tenta busca os dados do cliente 
+    cadastrar_cliente(cpf,nome,sobrenome):
+        tenta cadastrar um cliente
+    criar_conta(cliente_cpf, login,senha):
+        tenta criar uma conta para um cliente
+    depositar(valor, num_conta):
+        tenta realizar um deposito
+    sacar(valor, num_conta, senha):
+        tenta realizar um saque
+    transferir(valor,num_conta, senha, num_conta_destino):
+
+    historico(num_conta):
+        busca o histórico da conta
+    logar(login, senha):
+        busca o numero da conta 
+    sair():
+        fecha a conexão do banco
+    
     """
 
     def __init__(self) -> None:
         """
         construtor que cria dois atributos referentes ao banco de dados
 
-        self.conexão : mysql object
+        Parameters
+        ----------
+
+        self.conexao : object
             conexão entre a classe banco com o banco de dados escolhido, onde a mesma precisa dos parametros de acesso e conexão com o respectivo banco
         
-        self.cursor : mysql object
+        self.cursor : object
             cursor mysql que permite executar comandos no banco de dados, será usado sempre que for necessário solicitar algo ao banco de dados
 
         """
@@ -47,11 +81,11 @@ class Banco():
         caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados do cliente
         caso não exista o cliente buscado, retorna False e uma string de aviso.
 
-            parametros:
+            parameters:
                 cpf {string} : cpf do cliente que se deseja buscar
 
-            retorno:
-            Tuple : tupla com o resultado da busca pelo cliente
+            return:
+                Tuple : tupla com o resultado da busca pelo cliente
         """
         comando = (f'SELECT * FROM cliente where cpf = {cpf}')
 
@@ -68,17 +102,17 @@ class Banco():
         caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados da conta
         caso não exista a conta buscada, retorna False e uma string de aviso.
 
-            parametros:
+            parameters:
                 numero {string} : numero da conta que se deseja buscar
 
-            retorno:
+            return:
             Tuple : tupla com o resultado da busca pela conta
         """
         comando = (f'SELECT * FROM conta where numero = {numero}')
 
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
-        #print(resultado)
+  
         if resultado != []:
             #retorno caso possuir conta
             return (True, resultado[0][0], resultado[0][1], resultado[0][2],resultado[0][3],resultado[0][4], resultado[0][5])
@@ -90,12 +124,13 @@ class Banco():
         """
         Realiza o cadastro do cliente no banco de dados e retorna True caso o mesmo não possua um cadastro, caso o cliente já possuir cadastro retorna False e não cadastra
 
-            Parametros:
+            parameters:
                 cpf {string} : cpf do cliente em formato string
                 nome {string} : nome do cliente em formato string
                 sobrenome {string} : sobrenome do cliente em formato string
             
-            Retorno: 
+            return
+: 
                 Boleano referente ao resultado da operação
         """
         busca = self.buscar_cliente(cpf)
@@ -112,12 +147,13 @@ class Banco():
         """
         Realiza o cadastro de uma no banco de dados e retorna True caso a mesmo não exista, caso a conta já exista retorna False e não cadastra
 
-            Parametros:
+            parameters:
                 cliente_cpf {string} : cpf do cliente em formato string
                 login {string} : login do cliente em formato string
                 senha {string} : hash da senha do cliente em formato string
             
-            Retorno: 
+            return
+: 
                 Boleano referente ao resultado da operação
         """
         
@@ -146,16 +182,15 @@ class Banco():
             return False
 
 
-########################################################## CADASTRO E BUSCA DE CONTAS/CLIENTES ##############################
-########################################################### OPERAÇÕES BANCÁRIOS E HISTÓRICO #################################
     def depositar(self, valor, num_conta):
         """
         Realiza o ato de "depositar" do banco, onde recebe um valor e um número de conta e esse valor sera creditado na conta.
 
-            parâmetros:
+            parameters:
                 valor {string} : valor a ser depositado em formato de string
                 num_conta {string} : número da conta em string onde será créditado o depósito 
-            Retorno: 
+            return
+: 
                 Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
         """
         valor = float(valor)
@@ -180,11 +215,12 @@ class Banco():
         """
         Realiza o ato de "sacar" do banco, onde recebe um valor e um número de conta e esse valor sera retirado da conta.
 
-            parâmetros:
+            parameters:
                 valor {string} : valor a ser depositado em formato de string
                 num_conta {string} : número da conta em string onde será retirado o valor para saque
                 senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação 
-            Retorno: 
+            return
+: 
                 Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
         """
 
@@ -227,12 +263,12 @@ class Banco():
         """
         Realiza o ato de "transferir" do banco, onde recebe um valor e um número de conta, onde essa conta tera seu saldo subtraido pelo valor passado e esse mesmo valor será creditado na conta destino que foi passada.
 
-        parâmetros:
+        parameters:
             valor {string} : valor a ser depositado em formato de string
             num_conta {string} : número da conta em string onde será retirado o valor para transferencia
             senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação
             num_conta_destino {string} : número da conta que será creditado o valor transferido pela conta do usuário 
-        Retorno: 
+        return: 
                 Boleano referente ao resultado da operação e uma string justificado o motivo do boleano
         """
 
@@ -283,10 +319,10 @@ class Banco():
         """
         Realiza o ato de "buscar histórico" do banco, onde recebe um número de conta, busca todas as transações referentes a conta e retorna as mesmas.
 
-        parâmetros:
+        parameters:
             num_conta {string} : número da conta em string onde será retirado o valor para saque
 
-        Retorno: 
+        return: 
            uma lista de tuplas, onde cada tupla é uma transação
         """
         comando = f'SELECT transacao, data_transacao FROM historico WHERE historico_num_conta = {num_conta}'
@@ -320,49 +356,3 @@ class Banco():
     def sair(self):
         self.conexao.commit()
         self.conexao.close()
-
-if __name__ == '__main__':
-    '''b = Banco()
-    if b.logar('mauriciorocha70', 'mr14148099')[0]:
-        print('achei')
-    '''
-    #b.sair()
-    #print(b.buscar_cliente('001'))
-    #print(b.buscar_conta('14'))
-
-
-    #print(b.cadastrar_cliente('123', 'Pedro', 'Vital'))
-
-    #print(b.criar_conta('123', 'pedro123','123'))
-    #b.cancelar_conta('222', '123')
-    #print(b.buscar_cliente('083'))
-
-    #print(b.depositar(10, '403784779'))
-
-    #b.conexao.commit()
-    #b.conexao.close()
-
-    #retorno =  b.sacar(10,'314564974', 'mr14148099')
-    #if retorno[0]:
-    #    print(retorno[1])
-    #else:
-    #    print(retorno[1])
-
-""""    
-    retorno = b.historico('403784779')
-    if retorno != None:
-        for tupla in retorno:
-            print('\n','-'*40)
-            for iten in tupla:
-                print(iten, end=' ')
-    else:
-        print('Sem dados do historico')
-"""  
-"""
-    retorno =  b.transferir(2, '314564974', 'mr14148099', '403784779')
-    if retorno[0]:
-        print(retorno[1])
-    else:
-        print(retorno[1])
-"""
-    
