@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Welcome to Banco’s documentation! &#8212; Banco 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-main">
+<span id="welcome-to-banco-s-documentation"></span><h1>Welcome to Banco’s documentation!<a class="headerlink" href="#module-main" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-tela_saque"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_saque.Tela_Saque">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_saque.</span></span><span class="sig-name descname"><span class="pre">Tela_Saque</span></span><a class="headerlink" href="#tela_saque.Tela_Saque" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="tela_saque.Tela_Saque.Carregar_Janela">
+<span class="sig-name descname"><span class="pre">Carregar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_saque.Tela_Saque.Carregar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_saque.Tela_Saque.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_saque.Tela_Saque.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="atributos">
+<h2>Atributos:<a class="headerlink" href="#atributos" title="Permalink to this heading">¶</a></h2>
+<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_saque: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-banco"></span><dl class="py class">
+<dt class="sig sig-object py" id="banco.Banco">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banco.</span></span><span class="sig-name descname"><span class="pre">Banco</span></span><a class="headerlink" href="#banco.Banco" title="Permalink to this definition">¶</a></dt>
+<dd><p>classe banco que possui uma conexão ao banco de dados, onde a mesma pode acessar e alterar os dados do mesmo.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.buscar_cliente">
+<span class="sig-name descname"><span class="pre">buscar_cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.buscar_cliente" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza uma busca no banco de dados para saber se existe um cliente com cpf passado.
+caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados do cliente
+caso não exista o cliente buscado, retorna False e uma string de aviso.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>parametros:</dt><dd><p>cpf {string} : cpf do cliente que se deseja buscar</p>
+</dd>
+</dl>
+<p>retorno:
+Tuple : tupla com o resultado da busca pelo cliente</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.buscar_conta">
+<span class="sig-name descname"><span class="pre">buscar_conta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.buscar_conta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza uma busca no banco de dados para saber se existe uma conta referente ao número passado passado.
+caso exista retorna uma tupla onde o primeiro elemento é um boleano referente ao resultado da operação, os demais elementos da tupla são os dados da conta
+caso não exista a conta buscada, retorna False e uma string de aviso.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>parametros:</dt><dd><p>numero {string} : numero da conta que se deseja buscar</p>
+</dd>
+</dl>
+<p>retorno:
+Tuple : tupla com o resultado da busca pela conta</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.cadastrar_cliente">
+<span class="sig-name descname"><span class="pre">cadastrar_cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sobrenome</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.cadastrar_cliente" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o cadastro do cliente no banco de dados e retorna True caso o mesmo não possua um cadastro, caso o cliente já possuir cadastro retorna False e não cadastra</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parametros:</dt><dd><p>cpf {string} : cpf do cliente em formato string
+nome {string} : nome do cliente em formato string
+sobrenome {string} : sobrenome do cliente em formato string</p>
+</dd>
+<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.criar_conta">
+<span class="sig-name descname"><span class="pre">criar_conta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cliente_cpf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.criar_conta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o cadastro de uma no banco de dados e retorna True caso a mesmo não exista, caso a conta já exista retorna False e não cadastra</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parametros:</dt><dd><p>cliente_cpf {string} : cpf do cliente em formato string
+login {string} : login do cliente em formato string
+senha {string} : hash da senha do cliente em formato string</p>
+</dd>
+<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.depositar">
+<span class="sig-name descname"><span class="pre">depositar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.depositar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o ato de “depositar” do banco, onde recebe um valor e um número de conta e esse valor sera creditado na conta.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+num_conta {string} : número da conta em string onde será créditado o depósito</p>
+</dd>
+<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.historico">
+<span class="sig-name descname"><span class="pre">historico</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.historico" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o ato de “buscar histórico” do banco, onde recebe um número de conta, busca todas as transações referentes a conta e retorna as mesmas.</p>
+<dl class="simple">
+<dt>parâmetros:</dt><dd><p>num_conta {string} : número da conta em string onde será retirado o valor para saque</p>
+</dd>
+<dt>Retorno: </dt><dd><p>uma lista de tuplas, onde cada tupla é uma transação</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.sacar">
+<span class="sig-name descname"><span class="pre">sacar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.sacar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o ato de “sacar” do banco, onde recebe um valor e um número de conta e esse valor sera retirado da conta.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+num_conta {string} : número da conta em string onde será retirado o valor para saque
+senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação</p>
+</dd>
+<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banco.Banco.transferir">
+<span class="sig-name descname"><span class="pre">transferir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">senha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conta_destino</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#banco.Banco.transferir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o ato de “transferir” do banco, onde recebe um valor e um número de conta, onde essa conta tera seu saldo subtraido pelo valor passado e esse mesmo valor será creditado na conta destino que foi passada.</p>
+<dl class="simple">
+<dt>parâmetros:</dt><dd><p>valor {string} : valor a ser depositado em formato de string
+num_conta {string} : número da conta em string onde será retirado o valor para transferencia
+senha {string} : hash da senha em formato de string para garatir uma segurança da conta durante a operação
+num_conta_destino {string} : número da conta que será creditado o valor transferido pela conta do usuário</p>
+</dd>
+<dt>Retorno: </dt><dd><p>Boleano referente ao resultado da operação e uma string justificado o motivo do boleano</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="banco.data">
+<span class="sig-prename descclassname"><span class="pre">banco.</span></span><span class="sig-name descname"><span class="pre">data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#banco.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>retorna a data e hora atual em formato de string</p>
+</dd></dl>
+
+<span class="target" id="module-tela_cadastro"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_cadastro.Tela_Cadastro">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_cadastro.</span></span><span class="sig-name descname"><span class="pre">Tela_Cadastro</span></span><a class="headerlink" href="#tela_cadastro.Tela_Cadastro" title="Permalink to this definition">¶</a></dt>
+<dd><section id="uma-classe-para-representar-uma-tela-de-cadastro">
+<h2>uma classe para representar uma tela de cadastro<a class="headerlink" href="#uma-classe-para-representar-uma-tela-de-cadastro" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="id1">
+<h2>Atributos:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>esquerda: int</dt><dd><p>define a posição da “tela cadastro” no lado esquerdo da tela de visualização 
+topo: int
+define a posição da “tela cadastro” no topo da tela de vizualisação
+largura: int
+define a largura da “tela cadastro” na tela de visualização.
+altura: int
+define a altura da “tela cadastro” na tela de visualização.
+titulo: str
+define o titulo da “tela cadastro” na tela de visualização.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tela_cadastro.Tela_Cadastro.Carregar_Janela">
+<span class="sig-name descname"><span class="pre">Carregar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_cadastro.Tela_Cadastro.Carregar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Carrega_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_cadastro.Tela_Cadastro.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_cadastro.Tela_Cadastro.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id2">
+<h3>Atributos:<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>label1: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_nome: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_sobrenome: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_cpf: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_login: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_senha: rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<span class="target" id="module-tela_deposito"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_deposito.Tela_Deposito">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_deposito.</span></span><span class="sig-name descname"><span class="pre">Tela_Deposito</span></span><a class="headerlink" href="#tela_deposito.Tela_Deposito" title="Permalink to this definition">¶</a></dt>
+<dd><section id="uma-classe-para-representar-uma-tela-de-deposito">
+<h2>uma classe para representar uma tela de deposito<a class="headerlink" href="#uma-classe-para-representar-uma-tela-de-deposito" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="id3">
+<h2>Atributos:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>esquerda: int</dt><dd><p>define a posição da “tela deposito” no lado esquerdo da tela de visualização 
+topo: int
+define a posição da “tela deposito” no topo da tela de vizualisação
+largura: int
+define a largura da “tela deposito” na tela de visualização
+altura: int
+define a altura da “tela deposito” na tela de visualização.
+titulo: str
+define o titulo da “tela deposito” na tela de visualização.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tela_deposito.Tela_Deposito.Carregar_Janela">
+<span class="sig-name descname"><span class="pre">Carregar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_deposito.Tela_Deposito.Carregar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Carrega_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_deposito.Tela_Deposito.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_deposito.Tela_Deposito.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id4">
+<h3>Atributos:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_deposito: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<span class="target" id="module-tela_geral"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_geral.Tela_Geral">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_geral.</span></span><span class="sig-name descname"><span class="pre">Tela_Geral</span></span><a class="headerlink" href="#tela_geral.Tela_Geral" title="Permalink to this definition">¶</a></dt>
+<dd><section id="uma-classe-para-representar-uma-tela-geral">
+<h2>uma classe para representar uma tela geral<a class="headerlink" href="#uma-classe-para-representar-uma-tela-geral" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="id5">
+<h2>Atributos:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>esquerda: int</dt><dd><p>define a posição da “tela geral” no lado esquerdo da tela de visualização 
+topo: int
+define a posição da “tela geral” no topo da tela de vizualisação
+largura: int
+define a largura da “tela geral” na tela de visualização
+altura: int
+define a altura da “tela geral” na tela de visualização.
+titulo: str
+define o titulo da “tela geral” na tela de visualização.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tela_geral.Tela_Geral.Criar_Tela">
+<span class="sig-name descname"><span class="pre">Criar_Tela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_geral.Tela_Geral.Criar_Tela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Tela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_geral.Tela_Geral.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_geral.Tela_Geral.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id6">
+<h3>Atributos:<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>label_msg: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_saldo: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_limite: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_num_conta: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<span class="target" id="module-tela_historico"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_historico.Tela_historico">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_historico.</span></span><span class="sig-name descname"><span class="pre">Tela_historico</span></span><a class="headerlink" href="#tela_historico.Tela_historico" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="tela_historico.Tela_historico.Criar_Janela">
+<span class="sig-name descname"><span class="pre">Criar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_historico.Tela_historico.Criar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_historico.Tela_historico.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_historico.Tela_historico.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id7">
+<h2>Atributos:<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<p>label: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-tela_transferencia"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_transferencia.Tela_Transferencia">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_transferencia.</span></span><span class="sig-name descname"><span class="pre">Tela_Transferencia</span></span><a class="headerlink" href="#tela_transferencia.Tela_Transferencia" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="tela_transferencia.Tela_Transferencia.Carregar_Janela">
+<span class="sig-name descname"><span class="pre">Carregar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_transferencia.Tela_Transferencia.Carregar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_transferencia.Tela_Transferencia.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_transferencia.Tela_Transferencia.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id8">
+<h2>Atributos:<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_valor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_login_recebedor: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-tela_login"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_login.Tela_Login">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_login.</span></span><span class="sig-name descname"><span class="pre">Tela_Login</span></span><a class="headerlink" href="#tela_login.Tela_Login" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="tela_login.Tela_Login.Carregar_Janela">
+<span class="sig-name descname"><span class="pre">Carregar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_login.Tela_Login.Carregar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_login.Tela_Login.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_login.Tela_Login.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id9">
+<h2>Atributos:<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_login: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+label_senha: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-tela_inicial"></span><dl class="py class">
+<dt class="sig sig-object py" id="tela_inicial.Tela_Inicial">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tela_inicial.</span></span><span class="sig-name descname"><span class="pre">Tela_Inicial</span></span><a class="headerlink" href="#tela_inicial.Tela_Inicial" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="tela_inicial.Tela_Inicial.Criar_Janela">
+<span class="sig-name descname"><span class="pre">Criar_Janela</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tela_inicial.Tela_Inicial.Criar_Janela" title="Permalink to this definition">¶</a></dt>
+<dd><p>A função “Criar_Janela” cria uma janela na tela de acordo com os dados adicionado nos atributos
+esquerdo, topo, largura, altura e titulo</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tela_inicial.Tela_Inicial.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><a class="headerlink" href="#tela_inicial.Tela_Inicial.titulo" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id10">
+<h2>Atributos:<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<p>label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Banco</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Mauricio e Pedro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
