@@ -9,25 +9,24 @@ Welcome to Banco's documentation!
    :members:
 .. automodule:: servidor_final
    :members:
-.. automodule:: tela_saque
-   :members:
 .. automodule:: banco
-   :members:
-.. automodule:: tela_cadastro
-   :members:
-.. automodule:: tela_deposito
-   :members:
-.. automodule:: tela_geral
-   :members:
-.. automodule:: tela_historico
-   :members:
-.. automodule:: tela_transferencia
-   :members:
-.. automodule:: tela_login
    :members:
 .. automodule:: tela_inicial
    :members:
-
+.. automodule:: tela_cadastro
+   :members:
+.. automodule:: tela_login
+   :members:
+.. automodule:: tela_geral
+   :members:
+.. automodule:: tela_deposito
+   :members:
+.. automodule:: tela_saque
+   :members:
+.. automodule:: tela_transferencia
+   :members:
+.. automodule:: tela_historico
+   :members:
 
 .. toctree::
    :maxdepth: 2
