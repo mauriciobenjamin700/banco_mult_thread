@@ -4,19 +4,21 @@ class Tela_Inicial(QMainWindow):
     def __init__(self):
         """
         uma classe para representar uma tela inicial
-        --------
-        Atributos:
+        
+        ...
+
+        Attributes:
         --------
         esquerda: int
-        define a posição da "tela inicial" no lado esquerdo da tela de visualização 
+                define a posição da "tela geral" no lado esquerdo da tela de visualização 
         topo: int
-        define a posição da "tela inicial" no topo da tela de vizualisação
+                define a posição da "tela geral" no topo da tela de vizualisação
         largura: int
-        define a largura da "tela inicial" na tela de visualização
+                define a largura da "tela geral" na tela de visualização
         altura: int
-        define a altura da "tela inicial" na tela de visualização.
+                define a altura da "tela geral" na tela de visualização.
         titulo: str
-        define o titulo da "tela inicial" na tela de visualização.
+                define o titulo da "tela geral" na tela de visualização.
         """
         super().__init__()
         
@@ -28,10 +30,11 @@ class Tela_Inicial(QMainWindow):
 
         #########################################################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        label1: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label1: object
+            rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label1 = QLabel(self)
         self.label1.setText("REALIZE SEU CADASTRO OU SEU LOGIN")
@@ -41,15 +44,18 @@ class Tela_Inicial(QMainWindow):
 
 #################################################################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_cadastro: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de realizar um cadastro, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_login: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de realizar um login na conta, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_sair: Um botão que é usado para realizar uma determinada ação que é a de sair da tela inicial e fechar o programa, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+        botao_cadastro: object
+            Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de realizar um cadastro, na criação desse botão ele pode ser nomeado, movimentado 
+            a sua posição e redimensionado de tamanho.
+        botao_login: object
+            Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de realizar um login na conta, na criação desse botão ele pode ser nomeado, movimentado 
+            a sua posição e redimensionado de tamanho.
+        botao_sair: object
+            Um botão que é usado para realizar uma determinada ação que é a de sair da tela inicial e fechar o programa, na criação desse botão ele pode ser nomeado, movimentado 
+            a sua posição e redimensionado de tamanho.
         '''
         self.botao_cadastro = QPushButton('Cadastro',self)
         self.botao_cadastro.resize(320,170)

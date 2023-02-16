@@ -4,19 +4,21 @@ class Tela_historico(QMainWindow):
     def __init__(self):
         """
         uma classe para representar uma tela historico
-        --------
-        Atributos:
+        
+        ...
+
+        Attributes:
         --------
         esquerda: int
-        define a posição da "tela historico" no lado esquerdo da tela de visualização 
+                define a posição da "tela geral" no lado esquerdo da tela de visualização 
         topo: int
-        define a posição da "tela historico" no topo da tela de vizualisação
+                define a posição da "tela geral" no topo da tela de vizualisação
         largura: int
-        define a largura da "tela historico" na tela de visualização
+                define a largura da "tela geral" na tela de visualização
         altura: int
-        define a altura da "tela historico" na tela de visualização.
+                define a altura da "tela geral" na tela de visualização.
         titulo: str
-        define o titulo da "tela historico" na tela de visualização.
+                define o titulo da "tela geral" na tela de visualização.
         """
         super().__init__()
 
@@ -27,10 +29,11 @@ class Tela_historico(QMainWindow):
         self.titulo = 'Histórico'
 ####################################################################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        label: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label = QLabel(self)
         self.label.setText('HISTÓRICO DA CONTA ')
@@ -39,11 +42,12 @@ class Tela_historico(QMainWindow):
         self.label.setStyleSheet('QLabel {font: 40px}')
 #########################################################################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        Historico: é uma classe de conveniência que fornece uma visualização de lista com uma interface clássica baseada em itens para adicionar e remover itens,
-        onde nela é mostrada todo histórico de uma conta desde a sua criação, saque, deposito e transferência.
+        Historico: object
+                é uma classe de conveniência que fornece uma visualização de lista com uma interface clássica baseada em itens para adicionar e remover itens,
+                onde nela é mostrada todo histórico de uma conta desde a sua criação, saque, deposito e transferência.
         '''
         self.Historico = QListWidget(self)
         self.Historico.resize(600,600)
@@ -51,11 +55,12 @@ class Tela_historico(QMainWindow):
         
 #####################################################################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+        botao_voltar: object
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         '''
         self.botao_voltar = QPushButton("Voltar", self)
         self.botao_voltar.move(1150, 30)

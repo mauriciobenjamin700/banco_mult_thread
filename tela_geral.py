@@ -3,19 +3,21 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
 class Tela_Geral(QMainWindow):
     """
     uma classe para representar uma tela geral
-    --------
-    Atributos:
+    
+    ...
+
+    Attributes:
     --------
     esquerda: int
-     define a posição da "tela geral" no lado esquerdo da tela de visualização 
-     topo: int
-     define a posição da "tela geral" no topo da tela de vizualisação
-     largura: int
-     define a largura da "tela geral" na tela de visualização
-     altura: int
-     define a altura da "tela geral" na tela de visualização.
-     titulo: str
-     define o titulo da "tela geral" na tela de visualização.
+        define a posição da "tela geral" no lado esquerdo da tela de visualização 
+    topo: int
+        define a posição da "tela geral" no topo da tela de vizualisação
+    largura: int
+        define a largura da "tela geral" na tela de visualização
+    altura: int
+        define a altura da "tela geral" na tela de visualização.
+    titulo: str
+        define o titulo da "tela geral" na tela de visualização.
     """
     def __init__(self):
         super().__init__()
@@ -27,13 +29,17 @@ class Tela_Geral(QMainWindow):
         self.titulo = 'Tela Geral'
 #######################################$ titulo e saldo ###########################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        label_msg: rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_saldo: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_limite: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        label_num_conta: rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_msg: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_saldo: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_limite: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+        label_num_conta: object
+                rotula algum lugar da tela onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label_msg = QLabel(self)
         self.label_msg.setText('BEM VINDO(A)  ')
@@ -60,17 +66,21 @@ class Tela_Geral(QMainWindow):
         self.label_num_conta.setStyleSheet('QLabel {font: 40px; color: blue}')
 ########################################### Fileira de cima
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_deposito: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de deposito, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_sacar: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de saque, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_transferir: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de transferência, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
-        botao_historico: Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de histórico, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+        botao_deposito: object
+                Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de deposito, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        botao_sacar: object
+                Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de saque, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        botao_transferir: object
+                Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de transferência, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
+        botao_historico: object
+                Um botão que é usado para realizar uma determinada ação que é a de ir para a tela de histórico, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         '''
         self.botao_deposito = QPushButton('Depositar', self)
         self.botao_deposito.resize(200,40)
@@ -95,11 +105,12 @@ class Tela_Geral(QMainWindow):
         
 ##################################### sair ########################################
         '''
+        
+        Attributes:
         --------
-        Atributos:
-        --------
-        botao_voltar: Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+        botao_voltar: object
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, na criação desse botão ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         '''
         self.botao_voltar = QPushButton("Voltar", self)
         self.botao_voltar.move(1150, 30)
