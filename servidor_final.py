@@ -11,14 +11,17 @@ class usuario(threading.Thread):
     Classe que representa um usuário do banco
 
     ...
-    Atributos
+    Attributes
     ---------
     con : objeto
         conexão da maquina que o usuário está usando 
     adress : objeto
         endereço da maquina que o usuário
 
-
+    methods
+    -------
+    run()
+        inicia o servidor
     """
 
     def __init__(self,adress,con) -> None:
@@ -26,12 +29,16 @@ class usuario(threading.Thread):
         """
         Construtor da classe necessário para criar os atributo ao instanciar um objeto 
 
-        Parâmetros
+        Parameters
         ---------
         con : objeto
             conexão da maquina que o usuário está usando 
         adress : objeto
             endereço da maquina que o usuário
+
+        return
+        ------
+        None
         """
 
         threading.Thread.__init__(self)
