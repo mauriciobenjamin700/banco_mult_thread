@@ -9,15 +9,15 @@ class Tela_Cadastro(QMainWindow):
     Attributes:
     --------
     esquerda: int
-    define a posição da "tela deposito" no lado esquerdo da tela de visualização 
+        define a posição da "tela deposito" no lado esquerdo da tela de visualização 
     topo: int
-    define a posição da "tela deposito" no topo da tela de vizualisação
+        define a posição da "tela deposito" no topo da tela de vizualisação
     largura: int
-    define a largura da "tela deposito" na tela de visualização
+        define a largura da "tela deposito" na tela de visualização
     altura: int
-    define a altura da "tela deposito" na tela de visualização.
+        define a altura da "tela deposito" na tela de visualização.
     titulo: str
-    define o titulo da "tela deposito" na tela de visualização.
+        define o titulo da "tela deposito" na tela de visualização.
     """
     def __init__ (self):
         super().__init__()
@@ -34,17 +34,17 @@ class Tela_Cadastro(QMainWindow):
         Attributes:
         --------
         label1: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_nome: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_sobrenome: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_cpf: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_login: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         label_senha: object
-        rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
+                rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
         '''
         self.label1 = QLabel(self)
         self.label1.setText("CADASTRE-SE AGORA")
@@ -90,15 +90,15 @@ class Tela_Cadastro(QMainWindow):
         Attributes:
         --------
         LineEdit_nome: object
-        É uma caixa de texto onde o usuario pode adicionar o seu nome.
+                É uma caixa de texto onde o usuario pode adicionar o seu nome.
         LineEdit_sobrenome: object
-        É uma caixa de texto onde o usuario pode adicionar o seu sobrenome.
+                É uma caixa de texto onde o usuario pode adicionar o seu sobrenome.
         LineEdit_cpf: object
-        É uma caixa de texto onde o usuario pode adicionar o seu cpf.
+                É uma caixa de texto onde o usuario pode adicionar o seu cpf.
         LineEdit_login: object
-        É uma caixa de texto onde o usuario pode adicionar o seu usuário de login.
+                É uma caixa de texto onde o usuario pode adicionar o seu usuário de login.
         LineEdit_senha: object
-        É uma caixa de texto onde o usuario pode adicionar a sua senha de login.
+                É uma caixa de texto onde o usuario pode adicionar a sua senha de login.
         '''
         self.LineEdit_nome = QLineEdit(self)
         self.LineEdit_nome.move(700, 150)
@@ -139,11 +139,11 @@ class Tela_Cadastro(QMainWindow):
         Attributes:
         --------
         botao1: object
-        Um botão que é usado para realizar uma determinada ação que é a de cadastrar, onde ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+                Um botão que é usado para realizar uma determinada ação que é a de cadastrar, onde ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         botao2: object
-        Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
-        a sua posição e redimensionado de tamanho.
+                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
+                a sua posição e redimensionado de tamanho.
         '''
         self.botao1 = QPushButton("CADASTRAR", self)
         self.botao1.move(700,650)
