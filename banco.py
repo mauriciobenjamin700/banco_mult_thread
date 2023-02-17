@@ -72,7 +72,7 @@ class Banco():
             cursor mysql que permite executar comandos no banco de dados, será usado sempre que for necessário solicitar algo ao banco de dados
 
         """
-        self.conexao = mysql.connector.connect(host='localhost',user='root',password='',database='banco_python')
+        self.conexao = mysql.connector.connect(host='localhost',user='root',password='',database='banco_python_v2')
         self.cursor = self.conexao.cursor()
 
     def buscar_cliente(self, cpf):

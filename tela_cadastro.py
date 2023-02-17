@@ -18,9 +18,6 @@ class Tela_Cadastro(QMainWindow):
         define a altura da "tela deposito" na tela de visualização.
     titulo: str
         define o titulo da "tela deposito" na tela de visualização.
-    
-    Attributes:
-    --------
     label1: object
         rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
     label_nome: object
@@ -33,7 +30,10 @@ class Tela_Cadastro(QMainWindow):
         rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
     label_senha: object
         rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
-        
+    
+
+    Methods
+    -------
     """
     def __init__ (self):
         super().__init__()
