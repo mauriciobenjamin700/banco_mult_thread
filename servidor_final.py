@@ -180,5 +180,8 @@ def iniciar_servidor():
         newthread = usuario(cliente, conexao)
         newthread.start()
         print('Conectado\n')
+
+if __name__ == '__main__':
+    iniciar_servidor()
         
 

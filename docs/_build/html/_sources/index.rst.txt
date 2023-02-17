@@ -1,10 +1,10 @@
-.. POO Bank documentation master file, created by
-   sphinx-quickstart on Fri Feb 17 16:19:02 2023.
+.. Banco POO II documentation master file, created by
+   sphinx-quickstart on Fri Feb 17 16:42:55 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to POO Bank's documentation!
-====================================
+Welcome to Banco POO II's documentation!
+========================================
 .. automodule:: main
    :members:
 .. automodule:: servidor_final
