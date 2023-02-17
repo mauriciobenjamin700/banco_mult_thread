@@ -12,7 +12,7 @@ class usuario(threading.Thread):
 
     ...
     Attributes
-    ---------
+    ----------
     con : objeto
         conexão da maquina que o usuário está usando 
     adress : objeto
@@ -20,8 +20,11 @@ class usuario(threading.Thread):
 
     methods
     -------
-    run()
-        inicia o servidor
+    run():
+        liga a thread atual com o servidor
+    iniciar_servidor():
+        Liga o servidor permitindo a conexão das threads
+    
     """
 
     def __init__(self,adress,con) -> None:
@@ -51,8 +54,12 @@ class usuario(threading.Thread):
         while (True):
             """
             Quando uma instancia da classe é criada, esta função é iniciada. Esta função recebe strings separadas por virgula enviadas pelo cliente na variavel "msg_cliente", as separa e transforma em listas de caracteres, onde a posição [0] da lista é a função que ser solicitada ao banco e as demais posições são os dados necessários para a execução da função do banco.
-
             após cada operação e retornado uma string com os dados que o usuário precisa
+
+            parameters:
+                None
+            return
+                None
             """
 
     
@@ -142,35 +149,36 @@ class usuario(threading.Thread):
 
             #comando invalido
             else:
-                print('conexão encerrada!')
-                self.con.close()
-                serv_socket.close()
-                print('Servidor Encerrado! ')
-                
+                continue
 
-"""
-criação de um socket para o servidor "serv_socket" para receber as solicitações dos usuários e repassar as mesmas para o banco.
-"""
 
-ip = '0.0.0.0'
-port = 9002
+def iniciar_servidor():
+    """
+    criação de um socket para o servidor "serv_socket" para receber as solicitações dos usuários e repassar as mesmas para o banco.
+    parameters:
+        None
+    return
+        None
+    """
+    ip = '0.0.0.0'
+    port = 9002
 
-addr = ((ip, port))#define a tupla de endereço
-serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-serv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-serv_socket.bind(addr)
+    addr = ((ip, port))#define a tupla de endereço
+    serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    serv_socket.bind(addr)
 
-"""
-Laço de repetição de para que o servidor crie uma nova instancia da conexão sempre que um novo usuário se conectar
-"""
+    """
+    Laço de repetição de para que o servidor crie uma nova instancia da conexão sempre que um novo usuário se conectar
+    """
 
-while True:
-    serv_socket.listen(10)
+    while True:
+        serv_socket.listen(10)
 
-    print('aguardando conexão...\n')
-    conexao, cliente = serv_socket.accept()
-    newthread = usuario(cliente, conexao)
-    newthread.start()
-    print('Conectado\n')
-    
+        print('aguardando conexão...\n')
+        conexao, cliente = serv_socket.accept()
+        newthread = usuario(cliente, conexao)
+        newthread.start()
+        print('Conectado\n')
+        
 
