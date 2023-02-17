@@ -6,18 +6,19 @@ class Tela_Cadastro(QMainWindow):
     
     ...
 
-    Attributes:
-    --------
+    Attributes
+    ----------
     esquerda: int
-        define a posição da "tela deposito" no lado esquerdo da tela de visualização 
+        define a posição da "tela cadastro" no lado esquerdo da tela de visualização 
     topo: int
-        define a posição da "tela deposito" no topo da tela de vizualisação
+        define a posição da "tela dcadastro" no topo da tela de vizualisação
     largura: int
-        define a largura da "tela deposito" na tela de visualização
+        define a largura da "tela cadastro" na tela de visualização
     altura: int
-        define a altura da "tela deposito" na tela de visualização.
+        define a altura da "tela cadastro" na tela de visualização.
     titulo: str
-        define o titulo da "tela deposito" na tela de visualização.
+        define o titulo da "tela cadastro" na tela de visualização.
+
     label1: object
         rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
     label_nome: object
@@ -31,20 +32,37 @@ class Tela_Cadastro(QMainWindow):
     label_senha: object
         rotula algum lugar da tela, onde você define um texto, movimenta a posição desse texto, redimensiona o tamanho da label e adiciona o tamanho da fonte.
     
+    LineEdit_nome: object
+        É uma caixa de texto onde o usuario pode adicionar o seu nome.
+    LineEdit_sobrenome: object
+        É uma caixa de texto onde o usuario pode adicionar o seu sobrenome.
+    LineEdit_cpf: object
+        É uma caixa de texto onde o usuario pode adicionar o seu cpf.
+    LineEdit_login: object
+        É uma caixa de texto onde o usuario pode adicionar o seu usuário de login.
+    LineEdit_senha: object
+        É uma caixa de texto onde o usuario pode adicionar a sua senha de login.
+
+    botao1: object
+        Um botão que é usado para realizar uma determinada ação que é a de cadastrar, onde ele pode ser nomeado, movimentado a sua posição e redimensionado de tamanho.
+    botao2: object
+        Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado a sua posição e redimensionado de tamanho.
 
     Methods
     -------
+    Carregar_Janela ():
+        Gera a janela cadastro
     """
     def __init__ (self):
         super().__init__()
-###################################### Estrutura da janela ###################################
+
         self.esquerda = 0
         self.topo = 0
         self.largura = 1460
         self.altura = 800
         self.titulo = "TELA DE CADASTRO"
 
-####################################### LABEL ###############################################
+
         
         self.label1 = QLabel(self)
         self.label1.setText("CADASTRE-SE AGORA")
@@ -82,24 +100,6 @@ class Tela_Cadastro(QMainWindow):
         self.label_senha.resize(100,40)
         self.label_senha.setStyleSheet("QLabel {font: 30px}")
 
-
-       
-############################################### LINE EDIT ###############################
-        '''
-        
-        Attributes:
-        --------
-        LineEdit_nome: object
-                É uma caixa de texto onde o usuario pode adicionar o seu nome.
-        LineEdit_sobrenome: object
-                É uma caixa de texto onde o usuario pode adicionar o seu sobrenome.
-        LineEdit_cpf: object
-                É uma caixa de texto onde o usuario pode adicionar o seu cpf.
-        LineEdit_login: object
-                É uma caixa de texto onde o usuario pode adicionar o seu usuário de login.
-        LineEdit_senha: object
-                É uma caixa de texto onde o usuario pode adicionar a sua senha de login.
-        '''
         self.LineEdit_nome = QLineEdit(self)
         self.LineEdit_nome.move(700, 150)
         self.LineEdit_nome.resize(300,40)
@@ -132,19 +132,6 @@ class Tela_Cadastro(QMainWindow):
         self.LineEdit_senha.setPlaceholderText("Digite sua senha aqui!")
 
 
-        
-###################################### BOTÕES ###########################################3
-        '''
-        
-        Attributes:
-        --------
-        botao1: object
-                Um botão que é usado para realizar uma determinada ação que é a de cadastrar, onde ele pode ser nomeado, movimentado 
-                a sua posição e redimensionado de tamanho.
-        botao2: object
-                Um botão que é usado para realizar uma determinada ação que é a de voltar para a tela anterior, onde ele pode ser nomeado, movimentado 
-                a sua posição e redimensionado de tamanho.
-        '''
         self.botao1 = QPushButton("CADASTRAR", self)
         self.botao1.move(700,650)
         self.botao1.resize(200,40)
@@ -161,6 +148,12 @@ class Tela_Cadastro(QMainWindow):
         """
         A função "Carrega_Janela" cria uma janela na tela de acordo com os dados adicionado nos atributos
         esquerdo, topo, largura, altura e titulo
+
+        parameters:
+            None
+            
+        return:
+            None
         """
 
         self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
@@ -168,12 +161,13 @@ class Tela_Cadastro(QMainWindow):
         self.setWindowTitle(self.titulo)
         
         self.show()
-
+"""
 if __name__ == '__main__':
-    """
+    
     Em caso de teste utilizasse o " if __name__ == '__main__' "
-    """
+   
     import sys
     aplicacao =  QApplication(sys.argv)
     j = Tela_Cadastro()
     sys.exit(aplicacao.exec_())
+ """
