@@ -5,14 +5,13 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../'))
 
-project = 'Banco'
-copyright = '2023, Mauricio e Pedro'
-author = 'Mauricio e Pedro'
+project = 'POO Bank'
+copyright = '2023, Mauricio Benjamin da Rocha & Pedro Antonio Vital'
+author = 'Mauricio Benjamin da Rocha & Pedro Antonio Vital'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
@@ -23,7 +22,7 @@ extensions = ['sphinx.ext.autodoc']
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-language = 'pt-BR'
+language = 'pt-br'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
