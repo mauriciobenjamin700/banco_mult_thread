@@ -18,7 +18,7 @@ class main():
     ...
 
     Attributes
-    ---------
+    ----------
     tela_inicial : class
         tela inicial
     tela_cadastro : class
